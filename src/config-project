@@ -1,0 +1,16 @@
+ionic cordova plugin add cordova-plugin-bluetooth-serial
+
+npm install @ionic-native/bluetooth-serial
+
+// en el path del proyecto 
+
+ionic cordova prepare android 
+
+con el cel conectado 
+
+ionic cordova run --list 
+
+ionic cordova run android -l 
+
+
+

@@ -1,5 +1,7 @@
 {
   "name": "ble",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

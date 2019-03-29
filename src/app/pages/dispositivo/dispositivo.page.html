@@ -1,0 +1,42 @@
+<ion-header no-border translucent>
+  <ion-toolbar>
+      <ion-buttons slot= "start">
+
+          <!--  text= "volver"   va en el ion.back-button -->
+          <ion-back-button text= "" defaultHref= "/" ></ion-back-button>
+    
+        </ion-buttons>
+    <ion-title>Dispositivo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <h3>conectandose a dispositivo</h3>
+  <p>{{nombre}} : {{id}}</p>
+  <p>respuesta del dispositivo:  {{respuesta}}</p>
+
+  <form #formulario = "ngForm" (ngSubmit) = "onSubmitTemplate(formulario)">  
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label position= "floating">Texto</ion-label>
+      <ion-input
+      name= "texto"
+        type= "text"
+        [(ngModel)]= "texto">
+      </ion-input>
+    
+    </ion-item>
+    
+  </ion-list>
+
+  <ion-button expand= "full"
+  type= "submit"
+  [disabled]= "formulario.invalid">
+    Enviar
+ </ion-button>
+</form>
+</ion-content>

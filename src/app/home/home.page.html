@@ -1,12 +1,83 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
+<ion-header no-border>
+    <ion-toolbar>
+        <ion-title>
+            BLE arduino de prueba
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-</ion-content>
+
+
+    <ion-content padding>
+
+        <ion-list>
+    
+    
+            <ion-button [disabled] = "!dispositivosObtenidos" expand= "full" (click)= "comenzarScan()"> Comenzar scan</ion-button>
+         
+    
+            <ion-label>
+                Dispositivos disponibles
+            </ion-label>
+    
+            <ion-item
+                (click) = "irDispositivo(device)"
+                slot = "start" *ngFor='let device of dispositivosAmostrar'>
+    <!--
+
+                <span (click)="selectDevice(device.address)">{{device.name}}</span>
+    -->
+                nombre: {{device.name}}
+                <br>
+                mac/id : {{device.id}}
+            </ion-item>
+
+            <ion-spinner name="crescent" *ngIf="!dispositivosObtenidos"></ion-spinner>
+
+        </ion-list>
+    
+    </ion-content>
+
+<!--
+
+
+            <ion-label>
+                Dispositivos enlazados
+            </ion-label>
+
+            <br>
+
+            <ion-item  slot = "start" *ngFor= "let device of dispositivosConectados">
+                nombre : {{device.name}} 
+                <br>
+                mac/id : {{device.id}}
+           
+            </ion-item>
+    
+            <ion-button expand = "full" (click)="disconnect()">Desconectarse</ion-button>
+
+
+
+    <br>
+
+        <ion-button block (click)="disconnect()">Desconectarse</ion-button>
+
+        <ion-label>
+            Dispositivos disponibles
+        </ion-label>
+
+        <ion-item *ngFor='let device of dispositivosDesconectados'>
+
+            <span (click)="selectDevice(device.address)">
+
+                {{device.name}}
+                
+            </span>
+
+        </ion-item>
+
+        <br>
+
+        <ion-spinner name="crescent" *ngIf="dispositivosObtenidos"></ion-spinner>
+
+-->
